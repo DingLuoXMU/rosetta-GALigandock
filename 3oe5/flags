@@ -1,0 +1,15 @@
+-parser:script_vars runmode=dockflex
+-extra_res_fa ./3uex/LG1.params
+-nstruct 1
+-out:path:all ./3uex
+-gen_potential 
+-overwrite 
+-mute core basic protocols.relax 
+-crystal_refine 
+-scale_rb 10.0 
+-score::hb_don_strength hbdon_GENERIC_SC:1.45 
+-score::hb_acc_strength hbacc_GENERIC_SP2SC:1.19 
+-score::hb_acc_strength hbacc_GENERIC_SP3SC:1.19 
+-score::hb_acc_strength hbacc_GENERIC_RINGSC:1.19 
+-no_autogen_cart_improper
+

@@ -1,0 +1,1643 @@
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fc6fb5e0506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fc6fb625b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7fc6fb71133d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7fc6fb7122f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7fc6fb714c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7fc6fb71583d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7fc6fb715eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7fc6fb7165da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7fc6f6fb3f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7fc6f6fb82d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x55855101a2de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fc6fafded90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fc6fafdee40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x55855101aa25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -complex:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f19687ce506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f1968813b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7f19688ff33d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7f19689002f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f1968902c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f196890383d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f1968903eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f19689045da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f19641a1f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f19641a62d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x55b7bc4b92de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f19681ccd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f19681cce40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x55b7bc4b9a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -complex:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fc7aef33506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fc7aef78b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7fc7af06433d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7fc7af0652f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7fc7af067c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7fc7af06883d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7fc7af068eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7fc7af0695da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7fc7aa906f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7fc7aa90b2d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x5639dc2fe2de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fc7ae931d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fc7ae931e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x5639dc2fea25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -complex:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f329bb11506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f329bb56b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7f329bc4233d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7f329bc432f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f329bc45c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f329bc4683d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f329bc46eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f329bc475da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f32974e4f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f32974e92d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x5623460312de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f329b50fd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f329b50fe40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x562346031a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -complex:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f1a39327506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f1a3936cb23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7f1a3945833d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7f1a394592f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f1a3945bc2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f1a3945c83d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f1a3945ceaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f1a3945d5da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f1a34cfaf4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f1a34cff2d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x55cc2d4d42de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f1a38d25d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f1a38d25e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x55cc2d4d4a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -complex:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f3c64820506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f3c64865b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7f3c6495133d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7f3c649522f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f3c64954c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f3c6495583d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f3c64955eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f3c649565da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f3c601f3f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f3c601f82d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x5572b0c152de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f3c6421ed90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f3c6421ee40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x5572b0c15a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -holo:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f4ccfdd2506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f4ccfe17b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7f4ccff0333d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7f4ccff042f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f4ccff06c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f4ccff0783d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f4ccff07eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f4ccff085da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f4ccb7a5f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f4ccb7aa2d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x56105cbd22de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f4ccf7d0d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f4ccf7d0e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x56105cbd2a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -holo:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fd75cc23506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fd75cc68b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7fd75cd5433d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7fd75cd552f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7fd75cd57c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7fd75cd5883d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7fd75cd58eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7fd75cd595da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7fd7585f6f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7fd7585fb2d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x56101698d2de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fd75c621d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fd75c621e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x56101698da25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -holo:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f5979c48506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f5979c8db23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7f5979d7933d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7f5979d7a2f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f5979d7cc2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f5979d7d83d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f5979d7deaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f5979d7e5da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f597561bf4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f59756202d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x561479a322de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f5979646d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f5979646e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x561479a32a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -holo:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f26a9650506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f26a9695b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::find_key_cl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x84d) [0x7f26a978133d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x1e0) [0x7f26a97822f0]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f26a9784c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f26a978583d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f26a9785eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f26a97865da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f26a5023f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f26a50282d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x557333f6f2de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f26a904ed90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f26a904ee40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x557333f6fa25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1467
+[START_MESSAGE]
+Option matching -holo:pdb not found in command line top-level context
+Did you mean:
+	 -PCS
+	 -assembly:pdb1
+	 -assembly:pdb2
+	 -chemically_conjugated_docking:E2pdb
+	 -chemically_conjugated_docking:pdz
+	 -chunk:pdb2
+	 -dc
+	 -ddg
+	 -dist_cst:sd
+	 -dna:design:nopdb
+	 -evaluation:rdc
+	 -in:file:HDX
+	 -in:file:dc
+	 -in:file:pca
+	 -in:file:rdc
+	 -in:path:pdb
+	 -in:rdf
+	 -jd2
+	 -jd3
+	 -matdes:pdbID
+	 -mh:filter:pdb
+	 -mh:path:pdb
+	 -nmr:pcs
+	 -nmr:pre
+	 -nmr:rdc
+	 -out:path:db
+	 -out:path:pdb
+	 -out:pdb
+	 -out:pdb_gz
+	 -pH
+	 -rdc
+	 -remodel:vdw
+	 -rna:denovo:db
+	 -score:fiber_diffraction:b
+	 -score:fiber_diffraction:p
+	 -willmatch:poi
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f6b2f91d506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f6b2f962b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::set_option_value_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&)+0x472) [0x7f6b2fa4ba72]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x151) [0x7f6b2fa4f261]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f6b2fa51c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f6b2fa5283d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f6b2fa52eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f6b2fa535da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f6b2b2f0f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f6b2b2f52d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x5559519462de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f6b2f31bd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f6b2f31be40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x555951946a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1245
+[START_MESSAGE]
+ Multiple values specified for option -cryst:crystal_refine
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fa12d21a506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fa12d25fb23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::set_option_value_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&)+0x472) [0x7fa12d348a72]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x151) [0x7fa12d34c261]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7fa12d34ec2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7fa12d34f83d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7fa12d34feaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7fa12d3505da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7fa128bedf4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7fa128bf22d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x560eeca832de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fa12cc18d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fa12cc18e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x560eeca83a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1245
+[START_MESSAGE]
+ Multiple values specified for option -cryst:crystal_refine
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f724e02c506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f724e071b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::set_option_value_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&)+0x472) [0x7f724e15aa72]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x151) [0x7f724e15e261]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f724e160c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f724e16183d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f724e161eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f724e1625da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f72499fff4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f7249a042d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x56552b3082de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f724da2ad90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f724da2ae40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x56552b308a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1245
+[START_MESSAGE]
+ Multiple values specified for option -cryst:crystal_refine
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f2f2476e506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f2f247b3b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::set_option_value_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&)+0x472) [0x7f2f2489ca72]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x151) [0x7f2f248a0261]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7f2f248a2c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7f2f248a383d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7f2f248a3eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7f2f248a45da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7f2f20141f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7f2f201462d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x55f726e032de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f2f2416cd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f2f2416ce40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x55f726e03a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1245
+[START_MESSAGE]
+ Multiple values specified for option -cryst:crystal_refine
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fefac4d0506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fefac515b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::set_option_value_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&)+0x472) [0x7fefac5fea72]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_option_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)+0x151) [0x7fefac602261]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_stream(std::istream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xf9d) [0x7fefac604c2d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load_options_from_file_exception(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1bd) [0x7fefac60583d]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, bool)+0x49a) [0x7fefac605eaa]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::options::OptionCollection::load(int, char* const*, bool)+0x14a) [0x7fefac6065da]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init_options(int, char**)+0x1f) [0x7fefa7ea3f4f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libcore.6.so(core::init::init(int, char**)+0x27) [0x7fefa7ea82d7]
+rosetta_scripts.mpi.linuxgccrelease(+0x42de) [0x55a6338612de]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fefabeced90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fefabecee40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x55a633861a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 1245
+[START_MESSAGE]
+ Multiple values specified for option -cryst:crystal_refine
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= " dockflex" -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fd4834ed506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fd483532b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::validate_input_script_against_xsd(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> > const&) const+0x739) [0x7fd48477f3d9]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::finish_creating_tag(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::vector1<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const+0x104) [0x7fd484788204]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::create_tag_from_xml(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::vector1<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)+0x152) [0x7fd484788562]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::create_tag_from_xml(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::options::OptionCollection const&)+0xbb) [0x7fd4847886fb]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover(std::shared_ptr<protocols::moves::Mover>&, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xe3) [0x7fd48478a633]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::run_one_job(std::shared_ptr<protocols::moves::Mover>&, long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&, unsigned long&, bool)+0x16d5) [0x7fd48425cfc5]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::go_main(std::shared_ptr<protocols::moves::Mover>)+0x1bb) [0x7fd48425e34b]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x374) [0x7fd4842a8344]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x5611623076a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fd482eebd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fd482eebe40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x561162307a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/protocols/rosetta_scripts/RosettaScriptsParser.cc
+[LINE]: 1217
+[START_MESSAGE]
+Input rosetta scripts XML file "liganddock.xml" failed to validate against the rosetta scripts schema. Use the option -parser::output_schema <output filename> to output the schema to a file to see all valid options.
+Your XML has failed validation.  The error message below will tell you where in your XML file the error occurred.  Here's how to fix it:
+
+1) If the validation fails on something obvious, like an illegal attribute due to a spelling error (perhaps you used scorefnction instead of scorefunction), then you need to fix your XML file.
+2) If you haven't run the XML rewriter script and this might be pre-2017 Rosetta XML, run the rewriter script (tools/xsd_xrw/rewrite_rosetta_script.py) on your input XML first.  The attribute values not being in quotes (scorefunction=talaris2014 instead of scorefunction="talaris2014") is a good indicator that this is your problem.
+3) If you are a developer and neither 1 nor 2 worked - email the developer's mailing list or try Slack.
+4) If you are an academic or commercial user - try the Rosetta Forums https://www.rosettacommons.org/forum
+
+
+Error messages were:
+Error: Opening and ending tag mismatch: SCOREFXNS line 2 and ROSETTASCRIPTS
+
+11:  </MOVERS>
+12:  <PROTOCOLS>
+13:  <Add mover="dock"/>
+14:  </PROTOCOLS>
+15:  <OUTPUT scorefxn="relaxscore"/>
+16: </ROSETTASCRIPTS>
+17: 
+Error: Premature end of data in tag ROSETTASCRIPTS line 1
+
+12:  <PROTOCOLS>
+13:  <Add mover="dock"/>
+14:  </PROTOCOLS>
+15:  <OUTPUT scorefxn="relaxscore"/>
+16: </ROSETTASCRIPTS>
+17: 
+------------------------------------------------------------
+Warning messages were:
+------------------------------------------------------------
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= " dockflex" -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f8e8e4df506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f8e8e524b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x10f) [0x7f8e8e4e533f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x36) [0x7f8e8e4e4f66]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobsContainer::operator[](unsigned long)+0xa65) [0x7f8e8f266185]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_remove_bad_inputs_from_job_list()+0x51a) [0x7f8e8f298e9a]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_go(std::shared_ptr<protocols::moves::Mover>)+0xbe2) [0x7f8e8f2966b2]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x258) [0x7f8e8f29a228]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x556c0662d6a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f8e8deddd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f8e8dedde40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x556c0662da25]
+
+[END_BACKTRACE]
+
+[FILE]: src/protocols/jd2/JobsContainer.cc
+[LINE]: 64
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: In protocols::jd2::JobsContainer [] operator: index is out of range (less than 1 or greater than total jobs).
+
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= " dockflex" -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fdd0ec13506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fdd0ec58b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::validate_input_script_against_xsd(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> > const&) const+0x739) [0x7fdd0fea53d9]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::finish_creating_tag(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::vector1<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const+0x104) [0x7fdd0feae204]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::create_tag_from_xml(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::vector1<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)+0x152) [0x7fdd0feae562]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::create_tag_from_xml(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::options::OptionCollection const&)+0xbb) [0x7fdd0feae6fb]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover(std::shared_ptr<protocols::moves::Mover>&, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xe3) [0x7fdd0feb0633]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::run_one_job(std::shared_ptr<protocols::moves::Mover>&, long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&, unsigned long&, bool)+0x16d5) [0x7fdd0f982fc5]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::go_main(std::shared_ptr<protocols::moves::Mover>)+0x1bb) [0x7fdd0f98434b]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x374) [0x7fdd0f9ce344]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x555adc0f36a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fdd0e611d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fdd0e611e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x555adc0f3a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/protocols/rosetta_scripts/RosettaScriptsParser.cc
+[LINE]: 1217
+[START_MESSAGE]
+Input rosetta scripts XML file "liganddock.xml" failed to validate against the rosetta scripts schema. Use the option -parser::output_schema <output filename> to output the schema to a file to see all valid options.
+Your XML has failed validation.  The error message below will tell you where in your XML file the error occurred.  Here's how to fix it:
+
+1) If the validation fails on something obvious, like an illegal attribute due to a spelling error (perhaps you used scorefnction instead of scorefunction), then you need to fix your XML file.
+2) If you haven't run the XML rewriter script and this might be pre-2017 Rosetta XML, run the rewriter script (tools/xsd_xrw/rewrite_rosetta_script.py) on your input XML first.  The attribute values not being in quotes (scorefunction=talaris2014 instead of scorefunction="talaris2014") is a good indicator that this is your problem.
+3) If you are a developer and neither 1 nor 2 worked - email the developer's mailing list or try Slack.
+4) If you are an academic or commercial user - try the Rosetta Forums https://www.rosettacommons.org/forum
+
+
+Error messages were:
+Error: Opening and ending tag mismatch: SCOREFXNS line 2 and ROSETTASCRIPTS
+
+11:  </MOVERS>
+12:  <PROTOCOLS>
+13:     <Add mover="dock"/>
+14:  </PROTOCOLS>
+15:  <OUTPUT scorefxn="relaxscore"/>
+16: </ROSETTASCRIPTS>
+17: 
+Error: Premature end of data in tag ROSETTASCRIPTS line 1
+
+12:  <PROTOCOLS>
+13:     <Add mover="dock"/>
+14:  </PROTOCOLS>
+15:  <OUTPUT scorefxn="relaxscore"/>
+16: </ROSETTASCRIPTS>
+17: 
+------------------------------------------------------------
+Warning messages were:
+------------------------------------------------------------
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= " dockflex" -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f37db3fa506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f37db43fb23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x10f) [0x7f37db40033f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x36) [0x7f37db3fff66]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobsContainer::operator[](unsigned long)+0xa65) [0x7f37dc181185]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_remove_bad_inputs_from_job_list()+0x51a) [0x7f37dc1b3e9a]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_go(std::shared_ptr<protocols::moves::Mover>)+0xbe2) [0x7f37dc1b16b2]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x258) [0x7f37dc1b5228]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x5563fe4486a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f37dadf8d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f37dadf8e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x5563fe448a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/protocols/jd2/JobsContainer.cc
+[LINE]: 64
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: In protocols::jd2::JobsContainer [] operator: index is out of range (less than 1 or greater than total jobs).
+
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= " dockflex" -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f979de23506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f979de68b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::validate_input_script_against_xsd(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> > const&) const+0x739) [0x7f979f0b53d9]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::finish_creating_tag(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::vector1<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const+0x104) [0x7f979f0be204]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::create_tag_from_xml(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::vector1<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)+0x152) [0x7f979f0be562]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::create_tag_from_xml(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::options::OptionCollection const&)+0xbb) [0x7f979f0be6fb]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover(std::shared_ptr<protocols::moves::Mover>&, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0xe3) [0x7f979f0c0633]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::run_one_job(std::shared_ptr<protocols::moves::Mover>&, long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&, unsigned long&, bool)+0x16d5) [0x7f979eb92fc5]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::go_main(std::shared_ptr<protocols::moves::Mover>)+0x1bb) [0x7f979eb9434b]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x374) [0x7f979ebde344]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x55e60d3126a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f979d821d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f979d821e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x55e60d312a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/protocols/rosetta_scripts/RosettaScriptsParser.cc
+[LINE]: 1217
+[START_MESSAGE]
+Input rosetta scripts XML file "liganddock.xml" failed to validate against the rosetta scripts schema. Use the option -parser::output_schema <output filename> to output the schema to a file to see all valid options.
+Your XML has failed validation.  The error message below will tell you where in your XML file the error occurred.  Here's how to fix it:
+
+1) If the validation fails on something obvious, like an illegal attribute due to a spelling error (perhaps you used scorefnction instead of scorefunction), then you need to fix your XML file.
+2) If you haven't run the XML rewriter script and this might be pre-2017 Rosetta XML, run the rewriter script (tools/xsd_xrw/rewrite_rosetta_script.py) on your input XML first.  The attribute values not being in quotes (scorefunction=talaris2014 instead of scorefunction="talaris2014") is a good indicator that this is your problem.
+3) If you are a developer and neither 1 nor 2 worked - email the developer's mailing list or try Slack.
+4) If you are an academic or commercial user - try the Rosetta Forums https://www.rosettacommons.org/forum
+
+
+Error messages were:
+From line 8:
+Error: Element 'ScoreFunction': This element is not expected. Expected is ( PROTOCOLS ).
+
+ 3:     <ScoreFunction name="dockscore" weights="beta_genpot">
+ 4:         <Reweight scoretype="fa_rep" weight="0.2"/>
+ 5:         <Reweight scoretype="coordinate_constraint" weight="0.1"/>
+ 6:     </ScoreFunction>
+ 7:     </SCOREFXNS>
+ 8:     <ScoreFunction name="relaxscore" weights="beta_genpot_cart"/>
+ 9:     <MOVERS>
+10:         <GALigandDock name="dock" runmode=""
+11:             scorefxn="dockscore" scorefxn_relax="relaxscore" />
+12:     </MOVERS>
+13:     <PROTOCOLS>
+------------------------------------------------------------
+Warning messages were:
+------------------------------------------------------------
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= " dockflex" -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fa4f554f506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fa4f5594b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x10f) [0x7fa4f555533f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x36) [0x7fa4f5554f66]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobsContainer::operator[](unsigned long)+0xa65) [0x7fa4f62d6185]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_remove_bad_inputs_from_job_list()+0x51a) [0x7fa4f6308e9a]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_go(std::shared_ptr<protocols::moves::Mover>)+0xbe2) [0x7fa4f63066b2]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x258) [0x7fa4f630a228]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x5600c55a86a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fa4f4f4dd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fa4f4f4de40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x5600c55a8a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/protocols/jd2/JobsContainer.cc
+[LINE]: 64
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: In protocols::jd2::JobsContainer [] operator: index is out of range (less than 1 or greater than total jobs).
+
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= " dockflex" -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fd84aa3d506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fd84aa82b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x10f) [0x7fd84aa4333f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x36) [0x7fd84aa42f66]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::tag::Tag::die_for_unaccessed_options() const+0x259) [0x7fd84abeb6b9]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::tag::Tag::die_for_unaccessed_options_recursively() const+0xe) [0x7fd84abeb72e]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::tag::Tag::die_for_unaccessed_options_recursively() const+0x2a) [0x7fd84abeb74a]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::tag::Tag::die_for_unaccessed_options_recursively() const+0x2a) [0x7fd84abeb74a]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover_for_protocol(std::shared_ptr<utility::tag::Tag const>, basic::datacache::DataMap&, utility::options::OptionCollection const&, std::shared_ptr<protocols::rosetta_scripts::XmlObjects>, std::shared_ptr<basic::resource_manager::ResourceManager>)+0x4cd) [0x7fd84bcd6bbd]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover_for_protocol(std::shared_ptr<utility::tag::Tag const>, utility::options::OptionCollection const&, basic::datacache::DataMap&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::shared_ptr<protocols::rosetta_scripts::XmlObjects>, std::shared_ptr<basic::resource_manager::ResourceManager>)+0x684) [0x7fd84bcd91d4]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover_for_protocol(std::shared_ptr<utility::tag::Tag const>, utility::options::OptionCollection const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::shared_ptr<protocols::rosetta_scripts::XmlObjects>, std::shared_ptr<basic::resource_manager::ResourceManager>)+0x108) [0x7fd84bcd9848]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover(std::shared_ptr<protocols::moves::Mover>&, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x151) [0x7fd84bcda6a1]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::run_one_job(std::shared_ptr<protocols::moves::Mover>&, long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&, unsigned long&, bool)+0x16d5) [0x7fd84b7acfc5]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::go_main(std::shared_ptr<protocols::moves::Mover>)+0x1bb) [0x7fd84b7ae34b]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x374) [0x7fd84b7f8344]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x560a8211c6a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fd84a43bd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fd84a43be40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x560a8211ca25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/tag/Tag.cc
+[LINE]: 232
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: 'runmode' is not a valid option for GALigandDock
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= " dockflex" -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f2c0eb4f506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f2c0eb94b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x10f) [0x7f2c0eb5533f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x36) [0x7f2c0eb54f66]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobsContainer::operator[](unsigned long)+0xa65) [0x7f2c0f8d6185]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_remove_bad_inputs_from_job_list()+0x51a) [0x7f2c0f908e9a]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_go(std::shared_ptr<protocols::moves::Mover>)+0xbe2) [0x7f2c0f9066b2]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x258) [0x7f2c0f90a228]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x555dbcf9d6a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f2c0e54dd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f2c0e54de40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x555dbcf9da25]
+
+[END_BACKTRACE]
+
+[FILE]: src/protocols/jd2/JobsContainer.cc
+[LINE]: 64
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: In protocols::jd2::JobsContainer [] operator: index is out of range (less than 1 or greater than total jobs).
+
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= dockflex -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7f26b0224506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7f26b0269b23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x10f) [0x7f26b022a33f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x36) [0x7f26b0229f66]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::tag::Tag::die_for_unaccessed_options() const+0x259) [0x7f26b03d26b9]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::tag::Tag::die_for_unaccessed_options_recursively() const+0xe) [0x7f26b03d272e]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::tag::Tag::die_for_unaccessed_options_recursively() const+0x2a) [0x7f26b03d274a]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::tag::Tag::die_for_unaccessed_options_recursively() const+0x2a) [0x7f26b03d274a]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover_for_protocol(std::shared_ptr<utility::tag::Tag const>, basic::datacache::DataMap&, utility::options::OptionCollection const&, std::shared_ptr<protocols::rosetta_scripts::XmlObjects>, std::shared_ptr<basic::resource_manager::ResourceManager>)+0x4cd) [0x7f26b14bdbbd]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover_for_protocol(std::shared_ptr<utility::tag::Tag const>, utility::options::OptionCollection const&, basic::datacache::DataMap&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::shared_ptr<protocols::rosetta_scripts::XmlObjects>, std::shared_ptr<basic::resource_manager::ResourceManager>)+0x684) [0x7f26b14c01d4]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover_for_protocol(std::shared_ptr<utility::tag::Tag const>, utility::options::OptionCollection const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::shared_ptr<protocols::rosetta_scripts::XmlObjects>, std::shared_ptr<basic::resource_manager::ResourceManager>)+0x108) [0x7f26b14c0848]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::rosetta_scripts::RosettaScriptsParser::generate_mover(std::shared_ptr<protocols::moves::Mover>&, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)+0x151) [0x7f26b14c16a1]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::run_one_job(std::shared_ptr<protocols::moves::Mover>&, long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&, unsigned long&, bool)+0x16d5) [0x7f26b0f93fc5]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobDistributor::go_main(std::shared_ptr<protocols::moves::Mover>)+0x1bb) [0x7f26b0f9534b]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x374) [0x7f26b0fdf344]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x559af09466a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f26afc22d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f26afc22e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x559af0946a25]
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/tag/Tag.cc
+[LINE]: 232
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: 'runmode' is not a valid option for GALigandDock
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: rosetta_scripts.mpi.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: mpi (OpenMPI 4.1.2) 
+[OS]: GNU/Linux
+[COMPILER]: GCC version "7.5.0"
+[STDLIB]: libstdc++ version 20191114
+[START_OPTIONS]
+ -in:file:s=complex.pdb -in:file:extra_res_fa=LG1.params -out:overwrite -out:mute=core basic protocols.relax -parser:protocol=liganddock.xml -parser:script_vars=runmode= dockflex -score:hb_don_strength=hbdon_GENERIC_SC:1.45 -score:hb_acc_strength=hbacc_GENERIC_SP2SC:1.19 hbacc_GENERIC_SP3SC:1.19 hbacc_GENERIC_RINGSC:1.19 -corrections:gen_potential -corrections:score:no_autogen_cart_improper -optimization:scale_rb=10 -cryst:crystal_refine
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(backtrace_string[abi:cxx11](int)+0x56) [0x7fa473fb5506]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe3) [0x7fa473ffab23]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x10f) [0x7fa473fbb33f]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x36) [0x7fa473fbaf66]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::JobsContainer::operator[](unsigned long)+0xa65) [0x7fa474d3c185]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_remove_bad_inputs_from_job_list()+0x51a) [0x7fa474d6ee9a]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::master_go(std::shared_ptr<protocols::moves::Mover>)+0xbe2) [0x7fa474d6c6b2]
+/mnt/d/code/rosetta.source.release-371/main/source/build/src/release/linux/5.15/64/x86/gcc/7/mpi/libprotocols.1.so(protocols::jd2::MPIWorkPoolJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x258) [0x7fa474d70228]
+rosetta_scripts.mpi.linuxgccrelease(+0x46a7) [0x55615b84c6a7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fa4739b3d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fa4739b3e40]
+rosetta_scripts.mpi.linuxgccrelease(+0x4a25) [0x55615b84ca25]
+
+[END_BACKTRACE]
+
+[FILE]: src/protocols/jd2/JobsContainer.cc
+[LINE]: 64
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: In protocols::jd2::JobsContainer [] operator: index is out of range (less than 1 or greater than total jobs).
+
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
